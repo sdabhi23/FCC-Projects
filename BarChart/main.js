@@ -104,7 +104,7 @@ function visualize(data) {
                     .style('top', h - d + 30 + 'px')
                     .style('transform', 'translateX(60px)')
                     .attr('data-date', data.data[i][0])
-                    .html("<strong>" + years[i] + ":</strong> <span style='color:lightblue'>" + GDP[i] + "</span>");
+                    .html("<strong>" + years[i] + ":</strong> <span style='color:lightblue'>$" + GDP[i] + " billion</span>");
         })
         .on('mouseout', () => tooltip.style("visibility", "hidden"));
 }
