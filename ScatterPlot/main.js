@@ -12,7 +12,7 @@ function getData() {
 
 function visualize(data) {
     
-    var yMargin = 40, w = 800, h = 400, barWidth = w/275;
+    var yMargin = 40, w = 800, h = 400;
     
     console.log(data);
 
@@ -28,7 +28,8 @@ function visualize(data) {
 
     data.forEach((d) => d.Time = timeParse(d.Time));
 
-    var yAxisGroup = svg.append('g').call(yAxis).attr('id', 'y-axis').attr('transform', 'translate(60, 0)');
+    var timeMin = new Date('Mon Jan 01 1900 00:36:30');
+    var timeMax =new Date('Mon Jan 01 1900 00:40:00');
 
     var tooltip = d3.select("#graphArea")
                     .append("div")
@@ -40,63 +41,81 @@ function visualize(data) {
                     .text("a simple tooltip");
     
     x.domain([d3.min(data,(d) => d.Year - 1), d3.max(data,(d) => d.Year + 1)]);
-
-    y.domain(d3.extent(data,(d) => d.Time));
+    y.domain([timeMin, timeMax]);
     
     svg.append("g")
-        .attr("class", "x axis")
         .attr("id","x-axis")
-        .attr("transform", "translate(0," + h + ")")
+        .attr("transform", "translate(60," + (h + 20) + ")")
         .call(xAxis)
-        .append("text")
-        .attr("class", "x-axis-label")
-        .attr("x", width)
-        .attr("y", -6)
-        .style("text-anchor", "end")
-        .text("Year");
     
     svg.append("g")
-        .attr("class", "y axis")
         .attr("id","y-axis")
-        .call(yAxis)
-        .append("text")
-        .attr("class", "label")
-        .attr("transform", "rotate(-90)")
-        .attr("y", 6)
-        .attr("dy", ".71em")
-        .style("text-anchor", "end")
-        .text("Best Time (minutes)")
+        .attr("transform", "translate(60, 20)")
+        .call(yAxis)    
         
     svg.append('text')
         .attr('transform', 'rotate(-90)')
-        .attr('x', -160)
-        .attr('y', -44)
+        .attr('x', -270)
+        .attr('y', 20)
         .style('font-size', 18)
-        .text('Time in Minutes')
+        .text("Best Time (minutes)")
         .style('font-family', "'Nunito', sans-serif");
 
-    // svg.selectAll('rect')
-    //     .data(scaledGDP)
-    //     .enter()
-    //     .append('rect')
-    //     .attr('data-date', (d, i) => data.data[i][0])
-    //     .attr('data-gdp', (d, i) => data.data[i][1])
-    //     .attr('class', 'bar')
-    //     .attr('x', (d, i) => i * barWidth)
-    //     .attr('y', (d, i) => h - d)
-    //     .attr('width', barWidth)
-    //     .attr('height', (d) => d)
-    //     .style('fill', 'orange')
-    //     .attr('transform', 'translate(60, 0)')
-    //     .on('mouseover', (d, i) => {
-    //         tooltip.style("visibility", "visible")
-    //                 .style('left', (i * barWidth) + 100 + 'px')
-    //                 .style('top', h - d + 30 + 'px')
-    //                 .style('transform', 'translateX(60px)')
-    //                 .attr('data-date', data.data[i][0])
-    //                 .html("<strong>" + years[i] + ":</strong> <span style='color:lightblue'>$" + GDP[i] + " billion</span>");
-    //     })
-    //     .on('mouseout', () => tooltip.style("visibility", "hidden"));
+    svg.append('text')
+        .attr('x', 450)
+        .attr('y', 460)
+        .style('font-size', 18)
+        .text("Year")
+        .style('font-family', "'Nunito', sans-serif");
+    
+    svg.selectAll("circle")
+        .data(data)
+        .enter()
+        .append("circle")
+        .attr("class", "dot")
+        .attr("r", 5)
+        .attr("cx", (d) => x(d.Year))
+        .attr("cy", (d) => y(d.Time))
+        .attr("data-xvalue", (d) => d.Year)
+        .attr("data-yvalue", (d)=> d.Time)
+        .style('transform', 'translate(60px, 20px)')
+        .attr("data-legend",(d) => color(d.Doping != ""))
+        .style("fill", (d) => color(d.Doping != ""))
+        .on('mouseover', (d, i) => {
+            tooltip.style("visibility", "visible")
+                    .style('left', x(d.Year) + 220 + 'px')
+                    .style('top', y(d.Time) + (d.Doping ? 40 : 60) + 'px')
+                    .style('transform', 'translateX(60px)')
+                    .attr('data-year', d.Year)
+                    .html(d.Name + ": " + d.Nationality + "<br>"
+                    + "Year: " +  d.Year +
+                    "<br>Time: " + timeFormat(d.Time) 
+                    + (d.Doping?"<br>  " + d.Doping:""));
+        })
+        .on('mouseout', () => tooltip.style("visibility", "hidden"));
+
+    var legend = svg.selectAll(".legend")
+                    .data(color.domain())
+                    .enter()
+                    .append("g")
+                    .attr("class", "legend")
+                    .attr("id", "legend")
+                    .attr("transform", (d, i) =>"translate(0," + (i * 20) + ")");
+
+    legend.append("rect")
+            .attr("x", w + 10)
+            .attr("width", 18)
+            .attr("height", 18)
+            .style("fill", color);
+    
+    legend.append("text")
+            .attr("x", w + 5)
+            .attr("y", 9)
+            .attr("class", "legend-text")
+            .attr("dy", ".35em")
+            .style("text-anchor", "end")
+            .text((d) => d ? "Riders with doping allegations" : "No doping allegations");
+
 }
 
 document.addEventListener('DOMContentLoaded', () => {

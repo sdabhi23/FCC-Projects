@@ -25,15 +25,22 @@ body {
     font-size: 1em;
 }
 
-.bar:hover {
-    fill: orangered !important;
+.legend-text {
+    font-family: 'Nunito', sans-serif;
+}
+
+.dot{
+    stroke: #000;
+    opacity: 0.8;
 }
 
 .d3-tip {
     line-height: 1;
+    text-align:left;
     font-family: 'Nunito', sans-serif;
     padding: 12px;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.75);
     color: #fff;
-    border-radius: 2px;
+    border-radius: 5px;
+    line-height: 1.2;
 }
