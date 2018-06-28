@@ -29,11 +29,6 @@ body {
     font-family: 'Nunito', sans-serif;
 }
 
-.dot{
-    stroke: #000;
-    opacity: 0.8;
-}
-
 .d3-tip {
     line-height: 1;
     text-align:left;
