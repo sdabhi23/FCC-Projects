@@ -1,0 +1,174 @@
+* {
+  font-family: "Montserrat Alternates", sans-serif;
+}
+
+.navbar-brand {
+  font-size: 30px;
+}
+
+.main-nav {
+  box-shadow: 0rem 0rem 5px 3px rgba(0, 0, 0, 0.25);
+}
+
+.fas,
+.fab {
+  color: #ff922b;
+}
+
+main {
+  width: 90vw;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+#features {
+  min-height: 100vh;
+  padding-top: 5rem;
+}
+
+.grid {
+  display: flex;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 125px;
+  width: 20vw;
+}
+
+.desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 125px;
+  width: 80vw;
+  padding: 5px;
+}
+
+@media (max-width: 550px) {
+  .grid {
+    flex-direction: column;
+  }
+
+  .desc {
+    width: 100%;
+    height: 150px;
+    text-align: center;
+    padding: 0;
+  }
+
+  .icon {
+    width: 100%;
+    height: 70px;
+  }
+}
+
+#about {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 4rem;
+  margin-top: -4rem;
+}
+
+#pricing {
+  min-height: 100vh;
+  padding-top: 5rem;
+  margin-top: -4rem;
+  display: flex;
+  justify-content: center;
+}
+
+.fa-check {
+  color: darkgreen;
+}
+
+.fa-times {
+  color: crimson;
+}
+
+@media (max-width: 550px) {
+  #pricing {
+    flex-direction: column;
+  }
+}
+
+#contact {
+  height: 100vh;
+  padding-top: 6rem;
+  margin-top: -4rem;
+}
+
+.icon-inverse {
+  color: white;
+}
+
+.icon-contact {
+  display: flex;
+  justify-content: center;
+  height: 200px;
+  width: 25vw;
+}
+
+.desc-contact {
+  display: flex;
+  flex-direction: column;
+  height: 60vh;
+  width: 75vw;
+  padding: 5px;
+}
+
+.desc-contact > h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 550px) {
+  .desc-contact {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+  }
+
+  .icon-contact {
+    width: 100%;
+    height: 150px;
+  }
+}
+
+#topBtn {
+  display: none;
+  position: fixed;
+  bottom: 0.75rem;
+  right: 0.75rem;
+  z-index: 99;
+  border: none;
+  outline: none;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 18px;
+  box-shadow: 0rem 0rem 5px 3px rgba(0, 0, 0, 0.25);
+}
+
+::-webkit-scrollbar {
+  width: 0.5vw;
+}
+
+::-webkit-scrollbar-track {
+  background: #343a40;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff922b;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff922b;
+}
