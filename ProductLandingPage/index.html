@@ -17,7 +17,7 @@
     <header id="header">
         <nav id="nav-bar" class="main-nav navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="#">
-                <i id="header-img" class="fab fa-gripfire fa-lg" style="color: #ff922b;"></i> LPG Bot
+                <img id="header-img" height="30px" src="http://localhost:8000/ProductLandingPage/logo.png"></img> LPG Bot
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -93,8 +93,8 @@
         </div>
 
         <div id="about">
-            <div id="video" class="embed-responsive embed-responsive-16by9">
-                <iframe src="https://www.youtube-nocookie.com/embed/GAb7bNiwglc" frameborder="0" allow="autoplay; encrypted-media"
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe id="video" src="https://www.youtube-nocookie.com/embed/GAb7bNiwglc" frameborder="0" allow="autoplay; encrypted-media"
                     allowfullscreen></iframe>
             </div>
         </div>
@@ -161,10 +161,10 @@
                 <div class="desc-contact">
                     <h3>Still have questions? Fill out the form below and we will reach out to you in 3 working days.
                         Promise 😃</h3>
-                    <form id="form">
+                    <form id="form" action="https://www.freecodecamp.com/email-submit">
                         <div class="form-group">
                             <label for="email">Email address</label>
-                            <input type="email" class="form-control" id="email" placeholder="Email address" required>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Email address" required>
                         </div>
                         <div class="form-group">
                             <label for="subject">Subject</label>
