@@ -2,62 +2,63 @@
 <html>
 
 <head>
+    <base href="https://sdabhi23.github.io/" target="_blank">
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>A Tribute to Dr. Kalam</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/FCC-Projects/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/FCC-Projects/css/all.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="./main.css" />
+    <script src="./main.js"></script>
 </head>
 
 <body>
-    <div class="container">
-        <h1 class="display-3" style="font-size: 50px">Dr. A. P. J. Abdul Kalam</h1>
+    <div id="main" class="container">
+        <h1 id="title" class="display-3" style="font-size: 50px">Dr. A. P. J. Abdul Kalam</h1>
         <p class="display-5 tag">
             <em>Missile Man of India</em>
         </p>
         <hr>
-        <div id="carouselExampleIndicators" class="carousel slide">
+        <div id="img-div" class="carousel slide">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <figure class="wp-caption">
-                        <img class="demo d-block w-100" src="https://images.assettype.com/thequint%2F2015-07%2F6743daec-e2ac-4b6d-9c0f-7bcbea37e07f%2FScreen%20Shot%202015-07-28%20at%2011.45.48%20AM.png"
+                        <img id="image" class="demo d-block w-100" src="https://images.assettype.com/thequint%2F2015-07%2F6743daec-e2ac-4b6d-9c0f-7bcbea37e07f%2FScreen%20Shot%202015-07-28%20at%2011.45.48%20AM.png"
                             alt="First slide" />
-                        <figcaption class="wp-caption-text">It is believed that when the Cabinet was against the idea
+                        <figcaption id="img-caption" class="wp-caption-text">It is believed that when the Cabinet was against the idea
                             of diverting money towards India’s advanced missile program, it was Kalam who convinced
                             Prime Minister Indira Gandhi to continue funding critical aerospace and defence projects</figcaption>
                     </figure>
                 </div>
                 <div class="carousel-item">
                     <figure class="wp-caption">
-                        <img class="demo d-block w-100" src="https://images.assettype.com/thequint%2F2015-07%2Fe6715bab-c25f-4b25-9a6e-6a2a17a17b53%2FIMG-20150727-WA0018.jpg"
+                        <img id="image" class="demo d-block w-100" src="https://images.assettype.com/thequint%2F2015-07%2Fe6715bab-c25f-4b25-9a6e-6a2a17a17b53%2FIMG-20150727-WA0018.jpg"
                             alt="Second slide" />
-                        <figcaption class="wp-caption-text">Undated picture of a young Kalam (left) with the Father of
+                        <figcaption id="img-caption" class="wp-caption-text">Undated picture of a young Kalam (left) with the Father of
                             India’s space Program Vikram Sarabhai</figcaption>
                     </figure>
                 </div>
                 <div class="carousel-item">
                     <figure class="wp-caption">
-                        <img class="demo d-block w-100" src="https://images.assettype.com/thequint%2F2015-07%2F1ed2b690-87c8-4935-8f56-db587769b92e%2Fby%20default.png"
+                        <img id="image" class="demo d-block w-100" src="https://images.assettype.com/thequint%2F2015-07%2F1ed2b690-87c8-4935-8f56-db587769b92e%2Fby%20default.png"
                             alt="Second slide" />
-                        <figcaption class="wp-caption-text">APJ Kalam speaking at a SLV - III Review meeting at ISRO</figcaption>
+                        <figcaption id="img-caption" class="wp-caption-text">APJ Kalam speaking at a SLV - III Review meeting at ISRO</figcaption>
                     </figure>
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <a class="carousel-control-prev" href="#img-div" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
             </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <a class="carousel-control-next" href="#img-div" role="button" data-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
         </div>
         <div class="card text-white bg-dark">
             <h2 class="card-header" style="font-weight: 400;">Life In Brief</h2>
-            <div class="card-body">
+            <div id="tribute-info" class="card-body">
                 <ul>
                     <li><b>1931:</b> Born to a Tamil Muslim family in the pilgrimage centre of Rameswaram on Pamban
                         Island, then in the Madras Presidency and now in the State of Tamil Nadu.</li>
@@ -97,9 +98,9 @@
             </div>
             <div class="card-footer">
                 <h2 style="font-weight: 400;">Further Reading:</h2>
-                <a href="https://en.wikipedia.org/wiki/A._P._J._Abdul_Kalam" class="btn btn-light"><i class="fab fa-wikipedia-w">
+                <a id="tribute-link" href="https://en.wikipedia.org/wiki/A._P._J._Abdul_Kalam" target="_blank" class="btn btn-light"><i class="fab fa-wikipedia-w">
                         Wikipedia</i></a>
-                <a href="http://www.abdulkalam.com/kalam/theme/jsp/guest/index.jsp" class="btn btn-light"><i class="fas fa-link"></i>
+                <a id="tribute-link" href="http://www.abdulkalam.com/kalam/theme/jsp/guest/index.jsp" target="_blank" class="btn btn-light"><i class="fas fa-link"></i>
                     Official Website</a>
             </div>
         </div>
@@ -126,7 +127,7 @@
             <a href="https://sdabhi23.wordpress.com" class="btn btn-dark"><i class="fab fa-wordpress-simple fa-lg"></i></a>
             <a href="https://medium.com/@sdabhi23" class="btn btn-dark"><i class="fab fa-medium-m fa-lg"></i></a></p>
     </div>
-    <script src="/FCC-Projects/js/jquery-3.2.1.slim.min.js"></script>
+    <script src="/FCC-Projects/js/jquery-3.3.1.min.js"></script>
     <script src="/FCC-Projects/js/popper.min.js"></script>
     <script src="/FCC-Projects/js/bootstrap.min.js"></script>
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
